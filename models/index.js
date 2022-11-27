@@ -20,6 +20,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.user = require("./User.js")(sequelize, Sequelize);
+
 db.book = require("./Book.js")(sequelize, Sequelize);
 db.role = require("./Role")(sequelize, Sequelize);
 db.rental = require("./rental")(sequelize, Sequelize);

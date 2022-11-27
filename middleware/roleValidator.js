@@ -13,5 +13,15 @@ const restrictToUser = async (req, res, next) => {
     });
   }
 
-  foundUser.roleId.role = "admin";
+  //join
+
+  if (foundUser.hasRole("admin")) {
+    res.status(401).json({
+      message: "Access denied!, Only admin can perform this action",
+    });
+  }
+
+  next();
 };
+
+module.exports = { restrictToUser };
